@@ -115,8 +115,6 @@ $(document).ready(function(){
 
 		// }
 
-		
-
 		// // $("#plus").on("click", addTab);
 
 
@@ -138,11 +136,21 @@ $(document).ready(function(){
 
 				var content = prompt("Please enter your content", " "); 
 
-		        var id = $(".nav-tabs").children().length; 
-		        
-		        $(this).closest('li').before("<li><a href='#"+title+"'>" + title + "</a><span>x</span></li>");         
-		        
-		        $('.tab-content').append('<div class="tab-pane" id="'+title+'"> '+ content +'</div>');
+				if(title != 0 && content != 0 && title != null && content != null){
+
+			        var id = $(".nav-tabs").children().length;
+			        
+					$(this).closest('li').before("<li><a href='#"+title+"'>" + title + "</a><span>x</span></li>");         
+			        
+			        $('.tab-content').append('<div class="tab-pane" id="'+title+'"> '+ content +'</div>');
+
+			    } else{
+
+			    	alert("No empty fields allowed");
+
+			    }
+
+
 		});
 
 
